@@ -1867,6 +1867,31 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/js/lib/components/dropdown.js":
+/*!*******************************************!*\
+  !*** ./src/js/lib/components/dropdown.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.dropdown = function () {
+  for (let i = 0; i < this.length; i++) {
+    const id = this[i].getAttribute('id');
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).click(() => {
+      Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(`[data-toggle-id="${id}"]`).fadeToggle(300);
+    });
+  }
+};
+
+Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('.dropdown-toggle').dropdown();
+
+/***/ }),
+
 /***/ "./src/js/lib/core.js":
 /*!****************************!*\
   !*** ./src/js/lib/core.js ***!
@@ -1917,6 +1942,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_handlers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/handlers */ "./src/js/lib/modules/handlers.js");
 /* harmony import */ var _modules_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/actions */ "./src/js/lib/modules/actions.js");
 /* harmony import */ var _modules_effects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/effects */ "./src/js/lib/modules/effects.js");
+/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/dropdown */ "./src/js/lib/components/dropdown.js");
+
 
 
 
@@ -2192,11 +2219,11 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeIn = function (dur, 
   for (let i = 0; i < this.length; i++) {
     this[i].style.display = display || 'block';
 
-    const _findIn = complection => {
+    const _fadeIn = complection => {
       this[i].style.opacity = complection;
     };
 
-    const ani = this.animateOverTime(dur, _fideIn, fin);
+    const ani = this.animateOverTime(dur, _fadeIn, fin);
     requestAnimationFrame(ani);
   }
 
@@ -2205,8 +2232,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeIn = function (dur, 
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeOut = function (dur, fin) {
   for (let i = 0; i < this.length; i++) {
-    // this[i].style.display = display || 'block'
-    const _findOut = complection => {
+    const _fadeOut = complection => {
       this[i].style.opacity = 1 - complection;
 
       if (complection === 1) {
@@ -2214,7 +2240,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeOut = function (dur,
       }
     };
 
-    const ani = this.animateOverTime(dur, _findOut, fin);
+    const ani = this.animateOverTime(dur, _fadeOut, fin);
     requestAnimationFrame(ani);
   }
 
@@ -2226,14 +2252,14 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeToggle = function (d
     if (window.getComputedStyle(this[i]).display === 'none') {
       this[i].style.display = display || 'block';
 
-      const _findIn = complection => {
+      const _fadeIn = complection => {
         this[i].style.opacity = complection;
       };
 
-      const ani = this.animateOverTime(dur, _fideIn, fin);
+      const ani = this.animateOverTime(dur, _fadeIn, fin);
       requestAnimationFrame(ani);
     } else {
-      const _findOut = complection => {
+      const _fadeOut = complection => {
         this[i].style.opacity = 1 - complection;
 
         if (complection === 1) {
@@ -2241,7 +2267,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeToggle = function (d
         }
       };
 
-      const ani = this.animateOverTime(dur, _findOut, fin);
+      const ani = this.animateOverTime(dur, _fadeOut, fin);
       requestAnimationFrame(ani);
     }
   }
@@ -2265,7 +2291,6 @@ __webpack_require__.r(__webpack_exports__);
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.on = function (eventName, callback) {
   if (!eventName || !callback) {
-    console.log('IF');
     return this;
   }
 
@@ -2318,6 +2343,9 @@ Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#first').on('click', (
 });
 Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-count="second"]').on('click', () => {
   Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(8).fadeToggle(800);
+});
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').eq(2).on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.w-500').fadeToggle(800);
 });
 
 /***/ })
