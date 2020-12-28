@@ -1,17 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import './general/base';
+@import './general/variables';
+@import './general//tepography';
 
-button {
-    width: 150px;
-    height: 40px;
-    background-color: lightblue;
-    text-align: center;
-}
-
-.active {
-    font-size: 20px;
-    color: red;
-}
+@import './components/ui.scss';
+@import './helpers/classes.scss'

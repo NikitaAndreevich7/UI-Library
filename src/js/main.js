@@ -1,15 +1,9 @@
 import $ from './lib/lib';
 
-$('button').on('click', function() {
-    $('div').eq(7).toggleClass('active');
-});
+$('#first').on('click',() =>{
+    $('div').eq(7).fadeToggle(800);
+})
+$('[data-count="second"]').on('click',() =>{
+    $('div').eq(8).fadeToggle(800);
+})
 
-$('div').click(function() {
-    console.log($(this).index());
-});
-
-// console.log($('div').eq(2).find('.some'));
-// console.log($('.some').closest('.findme'));
-$('.findme').fadeOut(1800);
-
-// console.log($('button').html('Hello'));
