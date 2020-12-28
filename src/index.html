@@ -11,11 +11,14 @@
 
     <div class="container">
 
+        <!----------------------------------------------- Button  -->
         <button class='btn btn-primary m20' id='first'>Click me</button>
         <button class='btn btn-dark m20' data-count='second'>Click me</button>
         <button class='btn btn-warning m20'>Click me</button>
 
-        <!-- Dropdown menu -->
+
+
+        <!----------------------------------------------- Dropdown menu -->
         <!-- <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
             <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
@@ -26,8 +29,50 @@
             </div>
         </div> -->
 
-        <div class="wrap">
-            
+        <!--------------------------------------------------- Card -->
+        <div class="goods d-flex f-space-around">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuUKnTLrNDMemonubD44KRtAUdMYHtF76sKQ&usqp=CAU" alt="photo" class='card-img'>
+                <div class="card-body">
+                    <div class="card-title">Card title</div>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, totam.</p>
+                    <a href="#" class="btn btn-primary">link to</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuUKnTLrNDMemonubD44KRtAUdMYHtF76sKQ&usqp=CAU" alt="photo" class='card-img'>
+                <div class="card-body">
+                    <div class="card-title">Card title 2</div>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, totam.</p>
+                    <a href="#" class="btn btn-primary" data-toggle='modal' data-target='#exampleModal'>link to</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!--------------------------------------------------- Modal -->
+        <div class="modal" id="exampleModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <button class="close" data-close>
+                        <span>&times;</span>
+                    </button>
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            Modal title
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-close> 
+                            Close
+                        </button>
+                        <button class="btn btn-success">Save changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
