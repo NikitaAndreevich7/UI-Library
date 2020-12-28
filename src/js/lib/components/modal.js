@@ -1,5 +1,6 @@
 import $ from '../core';
 
+//static
 $.prototype.modal = function(created) {
     for (let i = 0; i < this.length; i++) {
         const target = this[i].getAttribute('data-target');
@@ -34,6 +35,7 @@ $.prototype.modal = function(created) {
 
 $('[data-toggle="modal"]').modal();
 
+//diamic
 $.prototype.createModal = function({text, btns} = {}) {
     for (let i = 0; i< this.length; i++) {
         let modal = document.createElement('div');
